@@ -133,7 +133,7 @@ auth:
   replicas: 2
   image:
     repository: bharath44623/medimesh_medimesh-auth
-    tag: "v0.0.2"
+    tag: "v0.0.6"
   containerPort: 5001
   dbName: medimesh-auth-db
   service:
