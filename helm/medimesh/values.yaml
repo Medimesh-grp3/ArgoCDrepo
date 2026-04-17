@@ -179,7 +179,7 @@ doctor:
   replicas: 2
   image:
     repository: bharath44623/medimesh_medimesh-doctor
-    tag: "v0.0.3"
+    tag: "v0.0.4"
   containerPort: 5003
   dbName: medimesh-doctor-db
   service:
