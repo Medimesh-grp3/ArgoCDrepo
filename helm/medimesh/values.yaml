@@ -219,7 +219,7 @@ vitals:
   replicas: 2
   image:
     repository: bharath44623/medimesh_medimesh-vitals
-    tag: "v0.0.3"
+    tag: "v0.0.4"
   containerPort: 5005
   dbName: medimesh-vitals-db
   service:
