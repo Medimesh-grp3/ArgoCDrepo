@@ -81,7 +81,8 @@ spec:
               command: ["mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
             initialDelaySeconds: 15
             periodSeconds: 20
-            timeoutSeconds: 5
+            timeoutSeconds: 10
+            failureThreshold: 6
           volumeMounts:
             - name: mongodb-data
               mountPath: /data/db
@@ -99,6 +100,7 @@ spec:
         accessModes:
           - ReadWriteOnce
         storageClassName: {{ .Values.global.storage.nfs.storageClass }}
+        volumeMode: Filesystem
         resources:
           requests:
             storage: {{ .Values.storage.size }}
