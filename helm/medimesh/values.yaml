@@ -259,7 +259,7 @@ ambulance:
   replicas: 2
   image:
     repository: bharath44623/medimesh_medimesh-ambulance
-    tag: "v1.1.0"
+    tag: "v0.0.2"
   containerPort: 5007
   dbName: medimesh-ambulance-db
   service:
