@@ -199,7 +199,7 @@ appointment:
   replicas: 2
   image:
     repository: bharath44623/medimesh_medimesh-appointment
-    tag: "v0.0.1"
+    tag: "v0.0.2"
   containerPort: 5004
   dbName: medimesh-appointment-db
   service:
