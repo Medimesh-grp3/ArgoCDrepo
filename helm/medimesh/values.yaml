@@ -228,7 +228,7 @@ pharmacy:
   replicas: 2
   image:
     repository: bharath44623/medimesh_medimesh-pharmacy
-    tag: "v0.0.8"
+    tag: "v0.0.9"
   containerPort: 5006
   dbName: medimesh-pharmacy-db
   service:
@@ -288,7 +288,7 @@ forum:
   replicas: 2
   image:
     repository: bharath44623/medimesh_medimesh-forum
-    tag: "v0.0.5"
+    tag: "v1.0.0"
   containerPort: 5009
   dbName: medimesh-forum-db
   service:
