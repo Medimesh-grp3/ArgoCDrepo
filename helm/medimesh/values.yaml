@@ -302,7 +302,7 @@ forum:
   replicas: 2
   image:
     repository: bharath44623/medimesh_medimesh-forum
-    tag: "v1.0.2"
+    tag: "v1.0.3"
   containerPort: 5009
   dbName: medimesh-forum-db
   service:
