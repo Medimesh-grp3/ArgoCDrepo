@@ -4,23 +4,27 @@ global:
   imagePullPolicy: Always
   environment: production
   # Namespace isolation
+
   namespaces:
     frontend: medimesh-frontend
     backend: medimesh-backend
     db: medimesh-db
   # NFS storage config
+
   storage:
     nfs:
       server: "172.31.90.107"
       path: "/srv/nfs/medimesh"
       storageClass: nfs-dynamic-medimesh
   # MongoDB connection (used by all backend services)
+
   mongo:
     host: "medimesh-mongodb"
     port: 27017
     replicaSet: rs0
     replicas: 3
 # ─── Frontend ─────────────────────────────────────────────
+
 frontend:
   name: medimesh-frontend
   replicas: 2
@@ -81,6 +85,7 @@ frontend:
     httpRoute:
       name: medimesh-routes
 # ─── BFF ──────────────────────────────────────────────────
+
 bff:
   name: medimesh-bff
   replicas: 2
@@ -117,6 +122,7 @@ bff:
     maxUnavailable: 1
     maxSurge: 1
 # ─── Auth Service ─────────────────────────────────────────
+
 auth:
   name: medimesh-auth
   replicas: 2
@@ -137,6 +143,7 @@ auth:
       memory: "512Mi"
   extraEnv: []
 # ─── User Service ─────────────────────────────────────────
+
 user:
   name: medimesh-user
   replicas: 2
@@ -163,6 +170,7 @@ user:
     - name: PHARMACY_SERVICE_URL
       value: "http://medimesh-pharmacy-svc.medimesh-backend.svc.cluster.local:5006"
 # ─── Doctor Service ───────────────────────────────────────
+
 doctor:
   name: medimesh-doctor
   replicas: 2
@@ -183,6 +191,7 @@ doctor:
       memory: "512Mi"
   extraEnv: []
 # ─── Appointment Service ─────────────────────────────────
+
 appointment:
   name: medimesh-appointment
   replicas: 2
@@ -203,6 +212,7 @@ appointment:
       memory: "512Mi"
   extraEnv: []
 # ─── Vitals Service ──────────────────────────────────────
+
 vitals:
   name: medimesh-vitals
   replicas: 2
@@ -223,6 +233,7 @@ vitals:
       memory: "512Mi"
   extraEnv: []
 # ─── Pharmacy Service ────────────────────────────────────
+
 pharmacy:
   name: medimesh-pharmacy
   replicas: 2
@@ -243,12 +254,13 @@ pharmacy:
       memory: "512Mi"
   extraEnv: []
 # ─── Ambulance Service ───────────────────────────────────
+
 ambulance:
   name: medimesh-ambulance
   replicas: 2
   image:
     repository: bharath44623/medimesh_medimesh-ambulance
-    tag: "v0.0.8"
+    tag: "v0.0.9"
   containerPort: 5007
   dbName: medimesh-ambulance-db
   service:
@@ -263,6 +275,7 @@ ambulance:
       memory: "512Mi"
   extraEnv: []
 # ─── Complaint Service ───────────────────────────────────
+
 complaint:
   name: medimesh-complaint
   replicas: 2
@@ -283,6 +296,7 @@ complaint:
       memory: "512Mi"
   extraEnv: []
 # ─── Forum Service ───────────────────────────────────────
+
 forum:
   name: medimesh-forum
   replicas: 2
@@ -303,6 +317,7 @@ forum:
       memory: "512Mi"
   extraEnv: []
 # ─── MongoDB ─────────────────────────────────────────────
+
 mongo:
   name: medimesh-mongodb
   replicas: 3
@@ -344,6 +359,7 @@ mongo:
         cpu: "200m"
         memory: "256Mi"
 # ─── NFS Provisioner ─────────────────────────────────────
+
 nfs:
   enabled: true
   provisioner:
